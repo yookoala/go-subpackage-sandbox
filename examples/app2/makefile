@@ -2,8 +2,9 @@ all: clean run test
 
 go-mod:
 	@echo -e "\e[1;4;37mGo module operations\e[0m"
-	go mod init github.com/yookoala/go-subpackage-sandbox/examples/app1
+	go mod init github.com/yookoala/go-subpackage-sandbox/examples/app
 	go mod tidy
+	go get -u github.com/yookoala/go-subpackage-sandbox/subpackage
 	@echo
 
 app: go-mod
@@ -18,8 +19,10 @@ run: app
 
 test:
 	@echo -e "\e[1;4;37mCheck to make sure the parent package and subpackage are both referenced in generated go.mod\e[1;0m"
-	grep -q 'github.com/yookoala/go-subpackage-sandbox' go.mod && echo -e "parent package: \e[32msuccess\e[0m" || exit 1
-	grep -q 'github.com/yookoala/go-subpackage-sandbox/subpackage' go.mod && echo -e "subpackage:     \e[32msuccess\e[0m" || exit 1
+	@grep -q 'github.com/yookoala/go-subpackage-sandbox' go.mod && echo -e "parent package: \e[32mfound\e[0m" || exit 1
+	@grep -q 'github.com/yookoala/go-subpackage-sandbox/subpackage' go.mod && echo -e "subpackage: \e[32mfound\e[0m" || exit 1
+	@grep -q 'github.com/goccy/go-json' go.mod && echo -e "subpackage dependency: \e[32mfound\e[0m" || exit 1
+	@echo -e "\e[32msuccess\e[0m"
 
 clean:
 	@echo -e "\e[1;4;37mClean previous artifact, if any\e[1;0m"
