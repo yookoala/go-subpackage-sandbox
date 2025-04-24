@@ -1,2 +1,4 @@
+github.com/goccy/go-json v0.10.5 h1:Fq85nIqj+gXn/S5ahsiTlK3TmC85qgirsdTP/+DeaC4=
+github.com/goccy/go-json v0.10.5/go.mod h1:oq7eo15ShAhp70Anwd5lgX2pLfOS3QCiwU/PULtXL6M=
 github.com/yookoala/go-subpackage-sandbox v0.0.0-20250424170141-249661cab039 h1:fwELWU2bRmIJsxA2Llz6/y4CekudopGoCw1XsWnsbCE=
 github.com/yookoala/go-subpackage-sandbox v0.0.0-20250424170141-249661cab039/go.mod h1:2mfR09n63w7fSruHgIzY54jlEVE35jD0O5yVmFxyB1c=
