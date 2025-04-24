@@ -1,8 +1,6 @@
 package subpackage
 
 import (
-	"fmt"
-
 	json "github.com/goccy/go-json"
 	sandbox "github.com/yookoala/go-subpackage-sandbox"
 )
@@ -32,6 +30,5 @@ func jsonTest() string {
 }
 
 func Hello() string {
-	fmt.Println(jsonTest())
 	return sandbox.Hello() + ", " + jsonTest()
 }
